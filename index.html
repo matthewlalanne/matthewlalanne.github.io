@@ -96,16 +96,17 @@ dialog.lb .close{width:44px;height:44px;border-radius:8px;border:1px solid var(-
 dialog.lb .body{overflow:auto;padding:0}
 dialog.lb img{display:block;width:100%;height:auto}
 :root:has(dialog[open]){overflow:hidden;scrollbar-gutter:stable}
-/* reveal: opt-in, JS-gated, section-level only */
-@media (prefers-reduced-motion:no-preference){
-  html.js .reveal{opacity:0;transform:translateY(16px);transition:opacity 400ms var(--ease),transform 400ms var(--ease)}
-  html.js .reveal.in{opacity:1;transform:none}
-  html.js .stagger>*{opacity:0;transform:translateY(12px);transition:opacity 400ms var(--ease),transform 400ms var(--ease);transition-delay:calc(var(--i,0)*60ms)}
-  html.js .stagger.in>*{opacity:1;transform:none}
-  dialog.lb[open]{animation:lbin 200ms var(--ease)}
-  @keyframes lbin{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
-}
-@media (max-width:1100px){.dec{grid-template-columns:1fr}}
+/* reveal: JS-gated; motion for everyone, transforms dropped under reduced motion */
+html.js .reveal{opacity:0;transform:translateY(32px);transition:opacity 500ms var(--ease),transform 600ms var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .stagger>*{opacity:0;transform:translateY(20px);transition:opacity 500ms var(--ease),transform 600ms var(--ease);transition-delay:calc(var(--i,0)*90ms)}
+html.js .stagger.in>*{opacity:1;transform:none}
+dialog.lb[open]{animation:lbin 200ms var(--ease)}
+@keyframes lbin{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){html.js .reveal,html.js .stagger>*{transform:none!important;transition-duration:300ms}dialog.lb[open]{animation:none}}
+dialog.lb:not(.scroll) .box{margin:0 auto}
+dialog.lb:not(.scroll) .body{flex:1;min-height:0;display:flex;justify-content:center;overflow:hidden}
+dialog.lb:not(.scroll) img{height:auto;max-width:96vw}
 @media (max-width:820px){.about,.overview,.dec{grid-template-columns:1fr}.row{grid-template-columns:1fr;gap:6px}.cs .meta,.steps{grid-template-columns:1fr 1fr}.sec,.hero,.cs{padding:64px 0}.nav ul li:nth-child(n+4){display:none}}
 
 
@@ -236,17 +237,15 @@ footer a:hover{color:var(--accent)}
 .rc .takes>div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
 .rc .diff{border-left-color:var(--rose)}
 /* reveal variants */
-@media (prefers-reduced-motion:no-preference){
-  html.js .rc .reveal{transform:translateY(28px)}
-  html.js .rc .reveal.l{transform:translateX(-36px)}
-  html.js .rc .reveal.r{transform:translateX(36px)}
-  html.js .rc .reveal.in{transform:none}
-  html.js .rc .cs .stack img{opacity:0;transform:translateY(60px) rotate(0)}
-  html.js .rc .cs .stack.in img{opacity:1;transition:opacity 600ms var(--ease),transform 700ms var(--ease)}
-  html.js .rc .cs .stack.in img:nth-child(1){transform:rotate(-6deg);transition-delay:80ms}
-  html.js .rc .cs .stack.in img:nth-child(2){transform:none;transition-delay:0ms}
-  html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-delay:160ms}
-}
+html.js .rc .reveal.l{transform:translateX(-40px)}
+html.js .rc .reveal.r{transform:translateX(40px)}
+html.js .rc .reveal.in{transform:none}
+html.js .rc .cs .stack img{opacity:0;transform:translateY(60px)}
+html.js .rc .cs .stack.in img{opacity:1;transition:opacity 600ms var(--ease),transform 700ms var(--ease)}
+html.js .rc .cs .stack.in img:nth-child(1){transform:rotate(-6deg);transition-delay:80ms}
+html.js .rc .cs .stack.in img:nth-child(2){transform:none;transition-delay:0ms}
+html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-delay:160ms}
+@media (prefers-reduced-motion:reduce){html.js .rc .reveal.l,html.js .rc .reveal.r{transform:none}}
 @media (max-width:1100px){.rc .dec{grid-template-columns:1fr;gap:32px}.rc .dec:nth-of-type(even)>div:first-child{order:0}.rc .cs .top{grid-template-columns:1fr}.rc .cs .stack{height:360px;max-width:440px}.rc .after-hero{padding-top:150px}}
 @media (max-width:820px){.cards,.loop,.fb,.a11y{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.tl li{grid-template-columns:1fr;gap:4px}.rc .cs .stack{height:300px}.rc .cs .stack img{width:150px}.rc .cs .stack img:nth-child(2){left:90px}.rc .cs .stack img:nth-child(3){left:180px}}
 </style></head><body>
@@ -289,7 +288,7 @@ footer a:hover{color:var(--accent)}
   if(reduced||!('IntersectionObserver' in window)){targets.forEach(function(e){e.classList.add('in')})}
   else{var io=new IntersectionObserver(function(es,obs){es.forEach(function(e){if(!e.isIntersecting)return;Array.prototype.forEach.call(e.target.children,function(c,i){c.style.setProperty('--i',i)});e.target.classList.add('in');obs.unobserve(e.target)})},{threshold:0.1,rootMargin:'0px 0px -10% 0px'});targets.forEach(function(e){io.observe(e)});setTimeout(function(){targets.forEach(function(e){e.classList.add('in')})},4000)}
   var dlg=document.getElementById('lb');if(!dlg)return;var _x,img=document.getElementById('lbimg'),cap=document.getElementById('lbcap'),last=null;
-  document.querySelectorAll('.enlarge').forEach(function(b){b.addEventListener('click',function(){var f=document.getElementById('fig'+b.dataset.fig);var src=f.querySelector('img');img.src=src.src;img.alt=src.alt;cap.textContent=f.querySelector('figcaption span').textContent;last=b;dlg.showModal();dlg.querySelector('.close').focus()})});
+  document.querySelectorAll('.enlarge').forEach(function(b){b.addEventListener('click',function(){var f=document.getElementById('fig'+b.dataset.fig);var src=f.querySelector('img');img.src=src.src;img.alt=src.alt;cap.textContent=f.querySelector('figcaption span').textContent;dlg.classList.toggle('scroll',f.classList.contains('tall'));last=b;dlg.style.width='';dlg.showModal();dlg.querySelector('.close').focus();if(!dlg.classList.contains('scroll')){var fit=function(){var nw=img.naturalWidth,nh=img.naturalHeight;if(!nw)return;var barH=dlg.querySelector('.bar').offsetHeight;var availH=window.innerHeight*0.96-barH-2,availW=window.innerWidth*0.96;var w=Math.min(nw,availW,availH*nw/nh);img.style.width=w+'px';img.style.height='auto';dlg.style.width=Math.max(w,Math.min(360,availW))+'px'};img.style.width='';dlg.style.width='';requestAnimationFrame(fit);img.onload=function(){requestAnimationFrame(fit)}}else{img.style.width='';dlg.style.width=''}})});
   dlg.querySelector('.close').addEventListener('click',function(){dlg.close()});
   dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
   dlg.addEventListener('close',function(){if(last)last.focus()});
