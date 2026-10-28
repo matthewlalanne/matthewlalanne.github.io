@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Reality Check · Matt Lalanne</title><meta name="description" content="My first app: a fantasy league for reality TV that four friend leagues play every week.">
-<meta property="og:title" content="Reality Check · Matt Lalanne"><meta property="og:description" content="My first app: a fantasy league for reality TV that four friend leagues play every week.">
+<title>Reality Check · Matt Lalanne</title><meta name="description" content="Reality Check: a fantasy league app for reality TV that 40 players across four leagues use every week.">
+<meta property="og:title" content="Reality Check · Matt Lalanne"><meta property="og:description" content="Reality Check: a fantasy league app for reality TV that 40 players across four leagues use every week.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1220'/%3E%3Ctext x='16' y='22' font-family='Geist,Inter,sans-serif' font-size='17' font-weight='600' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap"><style>
@@ -268,10 +268,10 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
 <nav class="nav" aria-label="Main"><div class="wrap"><a href="/">Matt Lalanne</a><ul><li><a href="/">Home</a></li><li><a href="/#work">Work</a></li><li><a href="/about">About</a></li><li><a href="https://uxfolio-prod.s3.us-east-1.amazonaws.com/67ae7ce889868c5a7853fd09/Matthew_Lalanne_Product_Design_Resume_v27.pdf">Resume</a></li></ul></div></nav>
 <section class="cs" id="reality-check"><div class="wrap"><div class="top">
   <div class="reveal">
-    <div class="label">Side project · Reality Check · Last Chair Studio</div>
-    <h1>My first app: a fantasy league for reality TV that four friend leagues play every week</h1>
-    <p class="sub">Reality Check runs a fantasy league around a reality show. You draft cast members, call who goes home each week, and settle it in the league chat. I designed every screen and made every product call. Claude wrote the code. Four friend leagues play it every week, and I'm still learning how to ship software. This is what that looks like so far.</p>
-    <div class="meta"><div><b>Solo: product, UX and UI, testing, shipping</b>Role</div><div><b>Claude wrote the code, my leagues did the testing</b>Team</div><div><b>September 2026 to now</b>Timeline</div><div><b>Expo, React Native, Firebase, Claude Code, TestFlight</b>Tools</div></div>
+    <div class="label">Last Chair Studio · Reality Check</div>
+    <h1>A fantasy league app for reality TV that 40 players use every week</h1>
+    <p class="sub">Reality Check runs a fantasy league around a reality show. You draft cast members, call who goes home each week, and settle it in the league chat. I designed and shipped it end to end, from the rules and data model through screens, builds and release. Claude Code writes the code; I review every build on device and ship updates weekly from the league's feedback. Four friend leagues play it every week.</p>
+    <div class="meta"><div><b>Founder and product designer: product, UX and UI, testing, release</b>Role</div><div><b>Claude wrote the code, my leagues did the testing</b>Team</div><div><b>September 2026 to now</b>Timeline</div><div><b>Expo, React Native, Firebase, Claude Code, TestFlight</b>Tools</div></div>
     <p class="conf">Every screen here comes from the app's fake mode: invented players, cast and results, with the database offline. No real league member, cast member or result appears.</p>
   </div>
   <div class="stack reveal" aria-hidden="true"><img src="/img/rc/05-standings-folded-rows.jpg" alt="" width="600" height="1304"><img src="/img/rc/01-home-to-do-list.jpg" alt="" width="600" height="1304"><img src="/img/rc/14-chat-replies-read-receipts.jpg" alt="" width="600" height="1304"></div>
@@ -297,7 +297,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
     <div><b>4</b><strong>I sent it back until it matched</strong><p>Then it shipped as an update, so the league had it the same day and I found out fast if I'd guessed wrong.</p></div>
   </div>
   <div class="measure reveal" style="margin-top:48px">
-    <p>Small things took real rounds. The recap box in the episode editor went through seven versions in one day, from "plain text until tapped" to its own full-screen editor, because each one still had a keyboard or cursor problem on my phone. Chat took three tries before it reliably opened at the newest message. That's the honest cost of being new at this and not writing the code yourself: you find out on the device, and you send it back. I'd rather ship a small fix the same night than sit on a build for a week.</p>
+    <p>Small things took real rounds. The recap box in the episode editor went through seven versions in one day, from "plain text until tapped" to its own full-screen editor, because each one still had a keyboard or cursor problem on my phone. Chat took three tries before it reliably opened at the newest message. That's the cost of not writing the code yourself: you find out on the device, and you send it back. I'd rather ship a small fix the same night than sit on a build for a week.</p>
     <p>The loop also needed rules for the AI, and the two that matter most came from mistakes. Once, an update reported success and reached nobody, because a config change had quietly changed the build fingerprint. Now every update is checked against the live build first. Claude also once claimed my phone build was broken when it wasn't. So the project rules now say: check before you say it, and say "I haven't checked" when you haven't.</p>
     <p>I also had Claude build a fake mode, so I could poke at any screen with believable invented data and the database switched off. Nothing I tested could touch a real league, which matters when your testers are also your friends.</p>
   </div>
@@ -404,7 +404,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
 <section class="sec soft"><div class="wrap">
   <div class="reveal"><div class="head"><div class="label">Takeaways</div><h2>Things I learned the hard way, and would do differently</h2></div></div>
   <div class="takes stagger reveal"><div><b>Design for strangers from day one</b><p>The shared password and single season record were right for a private app. Turning them into accounts and per-league data later meant rebuilding the app in a copy.</p></div><div><b>Check the name before building</b><p>Outlast turned out to be taken. A rename sounds small until it means a new bundle id, a new URL scheme and a new app on everyone's phone.</p></div><div><b>Write the style rules first</b><p>I wrote STYLE.md two weeks in. Before that, screens drifted, and on Oct 8 I had to redesign Home, Cast, Bio, chat and the tab bar in one push.</p></div></div>
-  <div class="diff reveal"><b>Where I am with this</b><p>I'm a designer learning to ship, not a developer. The code is Claude's, the product decisions are mine, and the mistakes are mine too. I'm sharing it at this stage because the learning is the interesting part, and because four leagues are already using it whether it's finished or not.</p></div>
+  <div class="diff reveal"><b>Where it stands</b><p>The code is Claude's. The product, the design and every release decision are mine, and so are the mistakes. I'm sharing it before the App Store release because four leagues already depend on it, and the decisions along the way are the point of the write-up.</p></div>
 </div></section>
 <div class="cs-next"><div class="wrap"><small>More work</small><a href="/competitive-edge">Competitive Edge</a></div></div>
 <dialog class="lb" id="lb" aria-labelledby="lbcap"><div class="box"><div class="bar"><p id="lbcap"></p><button type="button" class="close" aria-label="Close">&times;</button></div><div class="body"><img id="lbimg" src="" alt=""></div></div></dialog>
