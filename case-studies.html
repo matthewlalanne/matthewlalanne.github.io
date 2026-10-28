@@ -147,6 +147,19 @@ footer a:hover{color:var(--accent)}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:720px}
 .pair .fig{margin:0}.pair .fig .frame{aspect-ratio:3/4}.pair .fig.phone .frame{background:var(--soft)}.pair .fig.phone img{object-fit:contain;object-position:center top;padding:16px}.pair .fig img{height:100%;object-fit:cover;object-position:top}
 .gatehint{font-size:14px;color:var(--muted)}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(14,18,32,.10)}
+.card .art{background:linear-gradient(135deg,#0E1220,#1D2740);aspect-ratio:5/3;display:flex;align-items:center;justify-content:center}
+.card .art svg{width:100%;height:100%}
+.card .body{padding:24px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:20px;margin-bottom:8px;transition:color .15s}
+.card:hover h3{color:var(--accent)}
+.card p{font-size:15px;color:var(--text);margin:0 0 20px;flex:1}
+.card .foot{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.card .who{font-size:13px;color:var(--muted)}
+.card .tag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px;white-space:nowrap}
+@media (max-width:900px){.cards3{grid-template-columns:1fr}}
 .hero h1 .aside{display:block;font-size:17px;font-weight:400;color:#a3acc2;letter-spacing:0;margin-top:16px;line-height:1.5}
 .ab{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:72px;align-items:start}
 .ab .photo{border-radius:10px;overflow:hidden;box-shadow:0 12px 40px rgba(14,18,32,.08)}
