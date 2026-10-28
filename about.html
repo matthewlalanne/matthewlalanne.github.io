@@ -121,7 +121,8 @@ footer a{color:var(--ink);text-decoration:none;font-weight:500}
 footer a:hover{color:var(--accent)}
 .contact{padding:96px 0;background:var(--soft);border-top:1px solid var(--line)}
 .contact h2{font-size:clamp(28px,3.6vw,40px);max-width:18ch}
-.contact p{font-size:18px;color:var(--muted);margin:16px 0 0;max-width:560px}
+.contact p{font-size:18px;color:var(--muted);margin:16px 0 0;max-width:min(720px,60vw)}
+@media (max-width:820px){.contact p{max-width:none}}
 .cs-next{padding:48px 0;border-top:1px solid var(--line)}
 .cs-next a{text-decoration:none;color:var(--ink);font-weight:600;font-size:22px}
 .cs-next small{display:block;color:var(--muted);font-size:14px;margin-bottom:6px}
@@ -284,8 +285,8 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
 </div></section>
 <section class="contact" id="contact"><div class="wrap">
   <div class="label">Contact</div>
-  <h2>If any of this looks like your kind of problem, let's talk.</h2>
-  <p>Email is best. Ask for the case study password and it'll be in my reply.</p>
+  <h2>Thanks for reading this far.</h2>
+  <p>The best part of my job is the people on the other side of the screen, and that includes you. Shoot me an email about the work, a role, or anything design. Password for the full case studies comes with my reply.</p>
   <div class="btns"><a class="btn" href="mailto:lalanne.matthew@gmail.com">Email me</a><a class="btn ghost" style="color:var(--ink);border-color:var(--line)" href="https://www.linkedin.com/in/matthewlalanne">LinkedIn</a></div>
 </div></section>
 <footer><div class="wrap"><span>Matt Lalanne · Product designer · Denver, CO</span><span><a href="mailto:lalanne.matthew@gmail.com">lalanne.matthew@gmail.com</a> · <a href="https://www.linkedin.com/in/matthewlalanne">LinkedIn</a></span></div></footer>
