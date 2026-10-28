@@ -124,6 +124,15 @@ footer a:hover{color:var(--accent)}
 .cs-next a{text-decoration:none;color:var(--ink);font-weight:600;font-size:22px}
 .cs-next small{display:block;color:var(--muted);font-size:14px;margin-bottom:6px}
 .cs-next a:hover{color:var(--accent)}
+.week{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:start;padding:20px 0;border-top:1px solid var(--line)}
+.week:last-child{border-bottom:1px solid var(--line)}
+.wk{font-size:13px;font-weight:500;color:var(--accent);padding-top:4px}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.days div{padding-top:8px;border-top:2px solid var(--ink)}
+.days b{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-bottom:4px}
+.days strong{display:block;font-weight:600;color:var(--ink);font-size:15px;margin-bottom:2px}
+.days p{font-size:13px;color:var(--muted);margin:0;line-height:1.45}
+@media (max-width:820px){.week{grid-template-columns:1fr;gap:8px}.days{grid-template-columns:1fr 1fr}}
 .rounds{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
 .rounds div{padding-top:12px;border-top:2px solid var(--ink);font-size:15px;color:var(--muted)}
 .rounds b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px}
