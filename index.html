@@ -107,6 +107,12 @@ dialog.lb img{display:block;width:100%;height:auto}
 }
 @media (max-width:820px){.about,.overview,.dec{grid-template-columns:1fr}.row{grid-template-columns:1fr;gap:6px}.cs .meta,.steps{grid-template-columns:1fr 1fr}.sec,.hero,.cs{padding:64px 0}.nav ul li:nth-child(n+4){display:none}}
 
+
+.facts div{display:grid;grid-template-columns:18px 1fr;column-gap:12px;align-items:start;padding-top:14px}
+.facts svg{color:var(--accent);margin-top:3px;grid-row:span 3}
+.facts span{font-size:13px;color:var(--muted);display:block}
+.facts b{display:block;color:var(--ink);font-weight:500;font-size:16px;margin-top:2px}
+.facts small{display:block;font-size:14px;color:var(--muted);margin-top:2px}
 footer{padding:64px 0;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:baseline}
 footer a{color:var(--ink);text-decoration:none;font-weight:500}
@@ -154,9 +160,14 @@ footer a:hover{color:var(--accent)}
     <div class="measure">
       <p>I'm a product designer at Spectrum. I started in the nonprofit world, at a foundation that serves people with Down syndrome, and watching how much the right tool could change someone's day is a big part of why I moved into design.</p>
       <p>At Spectrum I spent my first two years on internal tools, sitting with the agents and sales reps who used them and untangling the workflows that slowed them down. In 2024 I moved to the corporate website team and built out its components. Since 2025 I've been co-leading the site's redesign and working directly with executive stakeholders on where it goes next.</p>
-      <p>A lot of my recent work is in design operations. I build AI workflows that handle the large-scale audits and research synthesis our studio used to do by hand.</p>
+      <p>A lot of my recent work is in design operations. I build AI workflows that take on the large-scale audits and research synthesis our studio used to do by hand. The part I spend the most time on is making sure the output is right: I spot-check results against the source files, test the workflow on a sample where I already know the answer, and keep a human review step before anything reaches the team. AI makes the first pass cheap. Trusting it is still my job.</p>
     </div>
-    <div class="facts"><div><b>Denver, CO</b>Based</div><div><b>Spectrum, since 2022</b>Currently</div><div><b>Cal Poly, San Luis Obispo</b>BA Sociology, concentration in Psychology</div><div><b>General Assembly</b>UX Design Immersive</div></div>
+    <div class="facts">
+      <div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg><span>Based in</span><b>Denver, CO</b></div>
+      <div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg><span>Currently</span><b>Product designer, Spectrum</b><small>Since 2022</small></div>
+      <div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v5"/></svg><span>Education</span><b>Cal Poly, San Luis Obispo</b><small>BA Sociology, concentration in Psychology</small></div>
+      <div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v5"/></svg><span>Education</span><b>General Assembly</b><small>UX Design Immersive</small></div>
+    </div>
   </div>
 </div></section>
 
