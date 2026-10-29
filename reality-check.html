@@ -270,7 +270,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
   <div class="reveal">
     <div class="label">Last Chair Studio · Reality Check</div>
     <h1>A fantasy league app for reality TV</h1>
-    <p class="sub">Reality Check runs a fantasy league around a reality show. You draft cast members, call who goes home each week, and settle it in the league chat. I designed and released it end to end, from the rules and data model through screens, builds and release. Claude Code writes the code; I review every build on device and ship updates weekly from the league's feedback. Four friend leagues play it every week.</p>
+    <p class="sub">Reality Check runs a fantasy league around a reality show. You draft cast members, call who goes home each week, and settle it in the league chat. I designed and released it end to end, from the rules and data model through screens, builds and release. Claude Code writes the code; I review every build on device and ship updates weekly from the league's feedback. It's in beta testing now, with four friend leagues playing it every week.</p>
     <div class="meta"><div><b>Founder and product designer: product, UX and UI, testing, release</b>Role</div><div><b>Claude wrote the code, my leagues did the testing</b>Team</div><div><b>September 2026 to now</b>Timeline</div><div><b>Expo, React Native, Firebase, Claude Code, TestFlight</b>Tools</div></div>
     <p class="conf">Screens show my real leagues, with the players' OK. Chat messages are stand-ins, so nobody's group chat ends up on the internet.</p>
   </div>
@@ -281,7 +281,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
   <div class="cards tint stagger reveal"><div><b>4</b><span>friend leagues playing for real: three Survivor, one Amazing Race</span></div><div><b>2</b><span>shows supported so far: Survivor and The Amazing Race</span></div><div><b>5 weeks</b><span>from private Survivor app to public, multi-show app</span></div></div>
   <div class="overview reveal" style="margin-top:72px">
     <div class="measure"><div class="label">Where it stands</div>
-      <p>It started as Outlast, a private Survivor app for my own leagues. In 34 days it became Reality Check, an app where anyone can create or join a league for more than one show. Today one Amazing Race league plays in Reality Check, and my three Survivor leagues play in both apps through a two-way sync. It goes to the App Store after the Survivor 51 finale.</p></div>
+      <p>It started as Outlast, a private Survivor app for my own leagues. In 34 days it became Reality Check, an app where anyone can create or join a league for more than one show. Today one Amazing Race league plays in Reality Check, and my three Survivor leagues play in both apps through a two-way sync. It's in beta testing now, and it goes to the App Store after the Survivor 51 finale.</p></div>
     <div class="measure"><div class="label">The problem</div>
       <p>Most leagues run on a spreadsheet and a group chat. The commissioner types in every result, chases people for their weekly pick and settles arguments about deadlines. Nothing keeps a pick hidden until it locks, and nothing explains a score.</p>
       <p>Outlast fixed that for my own leagues, but it was built only for us: one season record, our league names hard-coded, one shared password. Fine for a few dozen friends, wrong for anyone else. On Sept 24 I wrote down everything that had to change before a stranger could use it. That list became Reality Check.</p></div>
@@ -289,10 +289,10 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
 </div></section>
 
 <section class="sec soft"><div class="wrap">
-  <div class="reveal"><div class="head"><div class="label">How I work with AI</div><h2>I designed first, and Claude built what I designed</h2><p>I don't write code. I describe what I want, review what comes back, and test it on a real phone. The loop looked like this.</p></div></div>
+  <div class="reveal"><div class="head"><div class="label">How I work with AI</div><h2>I designed first, and Claude built what I designed</h2><p>I don't write code. I design it, review what comes back, and test it on a real phone. The loop looked like this.</p></div></div>
   <div class="loop stagger reveal">
     <div><b>1</b><strong>I designed the screen first</strong><p>Rules before code. STYLE.md holds spacing, type scale, colour and "one job per screen". IA-PLAN.md cut six tabs to five and set the order of work.</p></div>
-    <div><b>2</b><strong>Claude wrote the code</strong><p>I described what I wanted in product terms and reviewed what came back against the design.</p></div>
+    <div><b>2</b><strong>Claude built it</strong><p>Then I reviewed what came back against the design.</p></div>
     <div><b>3</b><strong>I reviewed against the design</strong><p>In the simulator with fake data, then on my own phone.</p></div>
     <div><b>4</b><strong>I sent it back until it matched</strong><p>Then it shipped as an update, so the league had it the same day and I found out fast if I'd guessed wrong.</p></div>
   </div>
@@ -304,7 +304,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="reveal"><div class="head"><div class="label">Testing with my league</div><h2>My testers want to win, so they don't hold back</h2><p>Three Survivor leagues and one Amazing Race league use the apps every week, and they are the test group. Here is what they ran into and what changed.</p></div></div>
+  <div class="reveal"><div class="head"><div class="label">Beta testing with my leagues</div><h2>My testers want to win, so they don't hold back</h2><p>Three Survivor leagues and one Amazing Race league use the apps every week, and they are the beta testers. Here is what they ran into and what changed.</p></div></div>
   <div class="fb stagger reveal">
     <div><b>Sign-in codes never reached my friends.</b><p>The first email service only delivered to its own account owner, so nobody could sign in. Codes now come from my own Gmail, and the code screen tells you to check spam.</p></div>
     <div><b>They asked for reminders and better commissioner tools.</b><p>Reopening a pick for a late player once took a code change on an episode night. A push now goes out 12 hours before each episode, and commissioners can add, rename or remove players, change the draft time and pick for whoever is on the clock, all from the app.</p></div>
@@ -398,14 +398,14 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
     <li><b>Sept 30</b><div><strong>The first new show</strong><span>The Amazing Race 39 premiered, and a friend league played it in Reality Check.</span></div></li>
     <li><b>Oct 8</b><div><strong>The redesign and the sync</strong><span>I wrote the style rules and the tab plan, redesigned Home, Cast and chat, and connected my Survivor leagues to both apps.</span></div></li>
     <li><b>Oct 21</b><div><strong>Points leagues</strong><span>A second league style, and an accessibility pass the same day.</span></div></li>
-    <li><b>Next</b><div><strong>The App Store</strong><span>After the Survivor 51 finale comes one cutover build, then the stores under Last Chair Studio. Notes are started for Dancing with the Stars and The Traitors.</span></div></li>
+    <li><b>Next</b><div><strong>The App Store</strong><span>Beta testing wraps with the Survivor 51 finale. Then comes one cutover build, then the stores under Last Chair Studio. Notes are started for Dancing with the Stars and The Traitors.</span></div></li>
   </ul>
 </div></section>
 
 <section class="sec soft"><div class="wrap">
   <div class="reveal"><div class="head"><div class="label">Takeaways</div><h2>Things I learned the hard way, and would do differently</h2></div></div>
   <div class="takes stagger reveal"><div><b>Design for strangers from day one</b><p>The shared password and single season record were right for a private app. Turning them into accounts and per-league data later meant rebuilding the app in a copy.</p></div><div><b>Check the name before building</b><p>Outlast turned out to be taken. A rename sounds small until it means a new bundle id, a new URL scheme and a new app on everyone's phone.</p></div><div><b>Write the style rules first</b><p>I wrote STYLE.md two weeks in. Before that, screens drifted, and on Oct 8 I had to redesign Home, Cast, Bio, chat and the tab bar in one push.</p></div></div>
-  <div class="diff reveal"><b>Where it stands</b><p>The code is Claude's. The product, the design and every release decision are mine, and so are the mistakes. I'm sharing it before the App Store release because four leagues already depend on it, and the decisions along the way are the point of the write-up.</p></div>
+  <div class="diff reveal"><b>Where it stands</b><p>The code is Claude's. The product, the design and every release decision are mine, and so are the mistakes. It's in beta now. I'm sharing it before the App Store release because four leagues already depend on it, and the decisions along the way are the point of the write-up.</p></div>
 </div></section>
 <div class="cs-next"><div class="wrap"><small>More work</small><a href="/competitive-edge">Competitive Edge</a></div></div>
 <dialog class="lb" id="lb" aria-labelledby="lbcap"><div class="box"><div class="bar"><p id="lbcap"></p><button type="button" class="close" aria-label="Close">&times;</button></div><div class="body"><img id="lbimg" src="" alt=""></div></div></dialog>
