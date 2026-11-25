@@ -429,3 +429,24 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   .deck:not([open]):hover{transform:none}
 }
 @media (prefers-reduced-motion:reduce){.deck,.dk-toggle{transition:none}.deck[open] .dk-body{animation:none}.deck:not([open]):hover{transform:none}}
+
+/* Deck tweaks: all cards start closed, text runs the full width, and the button is an expand icon. */
+.dk-head{grid-template-columns:200px minmax(0,1fr) 200px 44px}
+.dk-head h2{max-width:none}
+.deck summary{padding:32px 0 72px}
+.deck[open] summary{padding-bottom:20px}
+.dk-body>div{max-width:none;margin-right:84px}
+.dk-toggle:after{display:none}
+.dk-toggle:before{left:11px;top:11px;right:11px;bottom:11px;width:auto;height:auto;transform:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/contain no-repeat}
+.deck[open] .dk-toggle{transform:none}
+.deck[open] .dk-toggle:before{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7'/%3E%3C/svg%3E")}
+@media (max-width:1000px){.dk-head{grid-template-columns:minmax(0,1fr) 44px}.dk-body>div{margin-right:0}.deck summary{padding:26px 0 56px}}
+/* Deck: the headline runs the full width; the number shows once a card is open. */
+@media (min-width:1001px){
+  .dk-head{grid-template-columns:200px minmax(0,1fr) 44px;row-gap:18px}
+  .dk-head h2{text-wrap:wrap}
+  .dk-head .stat{grid-column:2;text-align:left;display:flex;align-items:baseline;gap:14px}
+  .dk-head .stat span{margin:0;font-size:15px}
+  .deck:not([open]) .stat{display:none}
+  .dk-head .dk-toggle{grid-column:3;grid-row:1}
+}
