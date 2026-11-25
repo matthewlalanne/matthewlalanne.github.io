@@ -327,13 +327,38 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 @media (max-width:560px){.job{margin:0 -20px;padding-left:20px;padding-right:20px}.abx-collage .g2{right:0}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
 
-/* Phones and tablets: the three Reality Check screens become one row you swipe through. */
+/* Smaller screens: the three Reality Check screens move closer and overlap. On a phone only one shows, and it is small. */
 @media (max-width:1000px){
-  .band .phones{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -32px 64px;padding:8px 32px 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .band .phones::-webkit-scrollbar{display:none}
-  .band .phones img{flex:0 0 46%;width:46%;scroll-snap-align:center;margin-top:0!important}
+  .band .phones{display:flex;justify-content:center;align-items:flex-start;gap:0;margin:0 0 72px;overflow:visible}
+  .band .phones img{width:30%;max-width:220px;margin-top:0!important;border-radius:20px}
+  .band .phones img:nth-child(1){transform:rotate(-5deg) translateY(18px)}
+  .band .phones img:nth-child(2){margin-left:-7%;margin-right:-7%;position:relative;z-index:2}
+  .band .phones img:nth-child(3){transform:rotate(5deg) translateY(18px)}
 }
 @media (max-width:560px){
-  .band .phones{margin:0 -20px 56px;padding:8px 20px 20px;gap:12px}
-  .band .phones img{flex-basis:66%;width:66%;border-radius:18px}
+  .band .phones{margin-bottom:56px}
+  .band .phones img{width:52%;max-width:210px;border-radius:18px}
+  .band .phones img:nth-child(2),.band .phones img:nth-child(3){display:none}
+  .band .phones img:nth-child(1){transform:none}
+}
+/* Home hero without the image collage */
+.hero-grid.solo{grid-template-columns:1fr}
+.hero-grid.solo h1{max-width:17ch;font-size:clamp(40px,5.4vw,84px)}
+.hero:has(.solo){padding-bottom:24px}
+
+/* Smaller screens: the Reality Check screens stay to the right of the text, not under it. */
+@media (max-width:1000px){
+  .band .grid{grid-template-columns:minmax(0,1fr) 40%;gap:28px;align-items:center}
+  .band .phones{margin:0}
+  .band .phones img{width:42%;max-width:none}
+  .band .phones img:nth-child(2){margin-left:-13%;margin-right:-13%}
+  .band .grid>div:first-child{padding-bottom:72px}
+}
+@media (max-width:560px){
+  .band .grid{display:block;position:relative}
+  .band .grid>div:first-child{padding-bottom:64px}
+  .band .eyebrow,.band h2{max-width:calc(100% - 128px)}
+  .band h2{font-size:30px;min-height:190px}
+  .band .phones{position:absolute;right:0;top:4px;bottom:auto;width:auto;margin:0;display:block}
+  .band .phones img{height:232px;width:auto;max-width:none}
 }
