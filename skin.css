@@ -1,0 +1,28 @@
+/* Carries the bold look onto the case study pages. Loaded after the page's own styles and bold.css. */
+:root{--soft:#EFE7DB}
+.nav{background:none}
+.sec a:not(.btn),.cs-next a{color:var(--accent)}
+.label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+h2{font-size:clamp(30px,3.4vw,44px);line-height:1.08}
+h3{font-size:26px;line-height:1.14}
+.cs{border-radius:40px 40px 0 0;margin:0}
+.rc .cs{background:#2A1842}
+.ce .cs,.mts .cs{background:#14244F}
+.cs h1,.rc .cs h1{font-size:clamp(36px,4.6vw,60px);line-height:1.05;font-weight:500;letter-spacing:-0.025em}
+.cs .sub{font-size:20px}
+.cards b,.stats b,.loop strong{font-family:var(--serif);font-weight:500}
+.btn{border-radius:999px;background:var(--ink)}
+.btn:hover{background:var(--accent)}
+.takes b,.diff b,.fb b{font-family:var(--sans)}
+.rc blockquote.said{font-family:var(--serif);font-style:italic;font-size:24px}
+.plain h1{font-size:clamp(44px,7vw,96px);max-width:14ch}
+.plain{padding:72px 0 120px;max-width:none}
+.plain p{font-size:20px;margin-top:24px}
+.plain a{color:var(--accent);font-weight:600}
+@media (max-width:1000px){.cs{border-radius:28px 28px 0 0;margin:0}}
+
+/* Accessibility fixes from the audit */
+.sec.soft{--accent:#2559E0;--muted:#6B6174}
+.plain a{color:#2B63F0}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html.js .rc .cs .stack img{transition:none!important}}
