@@ -70,3 +70,10 @@ h3{font-size:26px;line-height:1.14}
   .rc .phones.n1{grid-template-columns:minmax(0,min(68vw,300px));justify-content:start}
 }
 @media (max-width:560px){.rc .cs .stack img{box-shadow:none}}
+
+/* Square top on the case study header. */
+.cs{border-radius:0!important}
+
+/* Accessibility audit 2: text was cut off on small screens because the swipe row stretched its column. */
+.rc .dec>*{min-width:0}
+.rc .cs .top{overflow-x:clip}

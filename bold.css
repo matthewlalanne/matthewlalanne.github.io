@@ -450,3 +450,6 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   .deck:not([open]) .stat{display:none}
   .dk-head .dk-toggle{grid-column:3;grid-row:1}
 }
+
+/* Square top on the Home featured card. */
+.band{border-radius:0!important}
