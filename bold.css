@@ -362,3 +362,70 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   .band .phones{position:absolute;right:0;top:4px;bottom:auto;width:auto;margin:0;display:block}
   .band .phones img{height:232px;width:auto;max-width:none}
 }
+
+/* Reviewer pass: on small screens a project row reads name, headline, then the number. */
+@media (max-width:1000px){.job .stat{order:0}}
+.band .grid>div:first-child .pill{margin-top:36px}
+
+/* Home shows only the Reality Check card now; it runs straight into the closing card. */
+.band.precontact{padding-bottom:96px!important}
+@media (max-width:560px){.nav ul a{padding:0 8px;font-size:15px}.nav .me{font-size:20px}}
+
+/* Case studies page: a deck of colored cards, all visible at once. Click one and it opens. */
+.pagehead{padding-bottom:104px}
+.decks{position:relative}
+.decks.precontact{padding-bottom:0!important}
+.deck{border-radius:40px 40px 0 0;margin-top:-40px;position:relative;transition:transform .25s var(--ease)}
+.deck summary{list-style:none;cursor:pointer;padding:40px 0 80px;display:block}
+.deck summary::-webkit-details-marker{display:none}
+.deck[open] summary{padding-bottom:28px}
+.deck:not([open]):hover{transform:translateY(-8px)}
+.dk-head{display:grid;grid-template-columns:200px minmax(0,1fr) 230px 44px;gap:40px;align-items:center}
+.dk-head .meta{font-size:15px;line-height:1.5}
+.dk-head .meta b{display:block;font-weight:600;font-size:16px}
+.dk-head .tag{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;border:1.5px solid var(--line);border-radius:999px;padding:3px 12px}
+.dk-head h2{font-size:clamp(24px,2.5vw,34px);line-height:1.12;max-width:26ch}
+.dk-head .stat{text-align:right}
+.dk-head .stat b{display:block;font-family:var(--serif);font-weight:500;font-size:44px;line-height:1;letter-spacing:-0.03em;white-space:nowrap}
+.dk-head .stat b.word{font-size:32px}
+.dk-head .stat b small{font-size:.45em;letter-spacing:0;margin-left:4px}
+.dk-head .stat span{display:block;font-size:13px;margin-top:6px;line-height:1.35}
+.dk-toggle{width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;position:relative;justify-self:end;transition:transform .25s var(--ease)}
+.dk-toggle:before,.dk-toggle:after{content:"";position:absolute;left:50%;top:50%;width:16px;height:2px;background:currentColor;transform:translate(-50%,-50%)}
+.dk-toggle:after{transform:translate(-50%,-50%) rotate(90deg)}
+.deck[open] .dk-toggle{transform:rotate(45deg)}
+.dk-body{padding-bottom:120px}
+.dk-body>div{margin-left:240px;max-width:640px}
+.dk-body p{font-size:19px}
+.dk-body .dk-note{font-size:15px}
+.dk-body .pill{margin-top:10px}
+.deck[open] .dk-body{animation:dkin .35s var(--ease)}
+@keyframes dkin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.c-purple{background:#2A1842;color:#E9DDF3}
+.c-blue{background:#2B63F0;color:#fff}
+.c-white{background:#fff;color:var(--text)}
+.c-navy{background:#14244F;color:#DCE4F7}
+.c-purple h2,.c-blue h2,.c-navy h2,.c-purple .meta b,.c-blue .meta b,.c-navy .meta b,.c-purple .stat b,.c-blue .stat b,.c-navy .stat b{color:#fff}
+.c-white .meta b,.c-white .stat b{color:var(--ink)}
+.c-purple .meta,.c-purple .stat span{color:#C9B8DA}
+.c-blue .meta,.c-blue .stat span{color:#fff}
+.c-navy .meta,.c-navy .stat span{color:#B9C6E6}
+.c-white .meta,.c-white .stat span{color:var(--muted)}
+.c-purple .tag,.c-blue .tag,.c-navy .tag{color:#fff;border-color:rgba(255,255,255,.55)}
+.c-white .tag{color:var(--muted)}
+.c-purple :focus-visible,.c-blue :focus-visible,.c-navy :focus-visible{outline-color:#fff}
+.deck summary:focus-visible{outline-offset:-6px;border-radius:40px 40px 0 0}
+@media (max-width:1000px){
+  .deck{border-radius:28px 28px 0 0;margin-top:-28px}
+  .deck summary{padding:30px 0 62px}
+  .dk-head{grid-template-columns:minmax(0,1fr) 44px;gap:10px 16px;align-items:start}
+  .dk-head .meta{grid-column:1}
+  .dk-toggle{grid-column:2;grid-row:1}
+  .dk-head h2{grid-column:1 / -1;font-size:24px}
+  .dk-head .stat{grid-column:1 / -1;text-align:left;margin-top:8px}
+  .deck:not([open]) .stat{display:none}
+  .dk-body>div{margin-left:0}
+  .dk-body{padding-bottom:96px}
+  .deck:not([open]):hover{transform:none}
+}
+@media (prefers-reduced-motion:reduce){.deck,.dk-toggle{transition:none}.deck[open] .dk-body{animation:none}.deck:not([open]):hover{transform:none}}

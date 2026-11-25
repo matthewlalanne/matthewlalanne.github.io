@@ -26,3 +26,47 @@ h3{font-size:26px;line-height:1.14}
 .plain a{color:#2B63F0}
 @media (max-width:560px){.cards{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){html.js .rc .cs .stack img{transition:none!important}}
+
+/* Screenshot panels: flat white, so app screens are not sitting on a lilac wash over the tan. */
+.rc .panel{background:#fff}
+.rc .sec:not(.soft) .panel{background:var(--paper2)}
+.rc .panel.dark{background:#2A1842}
+.rc .cards.tint>div{background:#fff;border-color:var(--line)}
+
+/* No panels at all: screenshots sit straight on the page with their own corners and a soft shadow. */
+.rc .panel,.rc .sec:not(.soft) .panel,.rc .panel.dark{background:none;padding:0;border-radius:0}
+.rc .panel.dark figcaption{color:var(--muted)}
+.rc .panel.dark .enlarge.ov{background:rgba(14,18,32,.72);color:#fff}
+.rc .phones .fig .frame{box-shadow:0 14px 34px rgba(27,19,38,.14)}
+
+/* Screenshots beside the text again, but in the wider column so they are readable. They stay in view while the text scrolls. */
+@media (min-width:1101px){
+  .rc .dec{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:start;margin-bottom:104px}
+  .rc .dec:nth-of-type(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+  .rc .dec>div:first-child{order:0;position:sticky;top:88px}
+  .rc .dec:nth-of-type(even)>div:first-child{order:2}
+  .rc .dec .text{max-width:none}
+  .rc .phones.n3{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:none;margin:0}
+  .rc .phones.n2{grid-template-columns:repeat(2,minmax(0,270px));gap:22px;justify-content:center;max-width:none;margin:0}
+  .rc .phones.n1{grid-template-columns:minmax(0,290px);justify-content:center}
+}
+@media (max-width:1100px){
+  .rc .dec{grid-template-columns:1fr;gap:32px;margin-bottom:72px}
+  .rc .dec>div:first-child,.rc .dec:nth-of-type(even)>div:first-child{order:2}
+  .rc .phones.n3{grid-template-columns:repeat(3,minmax(0,280px));justify-content:center;max-width:none;margin:0;gap:18px}
+  .rc .phones.n2{grid-template-columns:repeat(2,minmax(0,280px));justify-content:center;max-width:none;margin:0;gap:18px}
+  .rc .phones.n1{grid-template-columns:minmax(0,280px);justify-content:center}
+}
+.rc .phones figcaption{font-size:14px}
+.rc .fig.board{max-width:none}
+/* Section colors follow the screenshots in them. */
+.rc .sec.tint-green{background:#EAF1E8}
+.rc .sec.tint-purple{background:#F2EBF7}
+.rc .sec.tint-green,.rc .sec.tint-purple{--accent:#2559E0;--muted:#62596C}
+@media (max-width:820px){
+  .rc .phones.n2,.rc .phones.n3{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;margin:0 -20px;padding:6px 20px 18px;scrollbar-width:none}
+  .rc .phones.n2::-webkit-scrollbar,.rc .phones.n3::-webkit-scrollbar{display:none}
+  .rc .phones.n2 .fig,.rc .phones.n3 .fig{flex:0 0 min(68vw,300px);scroll-snap-align:center}
+  .rc .phones.n1{grid-template-columns:minmax(0,min(68vw,300px));justify-content:start}
+}
+@media (max-width:560px){.rc .cs .stack img{box-shadow:none}}
