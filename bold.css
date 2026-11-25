@@ -326,3 +326,14 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .job:hover h2{color:var(--rose)}
 @media (max-width:560px){.job{margin:0 -20px;padding-left:20px;padding-right:20px}.abx-collage .g2{right:0}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+/* Phones and tablets: the three Reality Check screens become one row you swipe through. */
+@media (max-width:1000px){
+  .band .phones{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -32px 64px;padding:8px 32px 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .band .phones::-webkit-scrollbar{display:none}
+  .band .phones img{flex:0 0 46%;width:46%;scroll-snap-align:center;margin-top:0!important}
+}
+@media (max-width:560px){
+  .band .phones{margin:0 -20px 56px;padding:8px 20px 20px;gap:12px}
+  .band .phones img{flex-basis:66%;width:66%;border-radius:18px}
+}
