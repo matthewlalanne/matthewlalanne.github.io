@@ -109,3 +109,23 @@ h3{font-size:26px;line-height:1.14}
 /* On one-column layouts the screens fade up, not in from the side. The sideways start pushed the page 40px wider than a phone. */
 @media (max-width:1100px){html.js .rc .reveal.l:not(.in),html.js .rc .reveal.r:not(.in){transform:translateY(32px)}}
 @media (max-width:1100px) and (prefers-reduced-motion:reduce){html.js .rc .reveal.l:not(.in),html.js .rc .reveal.r:not(.in){transform:none}}
+
+/* Playable prototype: the web app with made-up data, inside a phone-sized frame. Loads only when asked. */
+.rc .proto{background:var(--paper)}
+.proto-grid{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:72px;align-items:start}
+.proto-text h2{margin-bottom:20px}
+.proto-text p{font-size:18px;max-width:560px}
+.proto-links a{font-weight:600}
+.proto-web{margin:36px 0 0;max-width:560px}
+.proto-web .frame{border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(27,19,38,.16)}
+.proto-web img{display:block;width:100%;height:auto}
+.proto-frame{position:relative;width:390px;max-width:100%;aspect-ratio:390/800;border-radius:38px;overflow:hidden;background:#160c24;box-shadow:0 24px 60px rgba(27,19,38,.28);border:8px solid #1B1326}
+.proto-poster{display:block;width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.55)}
+.proto-start{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:inherit;font-weight:600;font-size:17px;color:var(--ink);background:#fff;border:0;border-radius:999px;min-height:52px;padding:0 28px;cursor:pointer;white-space:nowrap}
+.proto-start:hover{background:#D6E0FF}
+.proto-start:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.proto-frame iframe{display:block;width:100%;height:100%;border:0;background:#160c24}
+.proto-note{font-size:14px;color:var(--muted);margin:14px 0 0;text-align:center}
+@media (max-width:1000px){.proto-grid{grid-template-columns:1fr;gap:40px}.proto-phone{max-width:390px}}
+.proto-grid>*{min-width:0}
+.proto-frame{width:100%;max-width:390px}
