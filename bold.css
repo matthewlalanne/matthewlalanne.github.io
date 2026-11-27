@@ -734,3 +734,9 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 
 /* Corporate website card: 6 of the 16 built pages are live. */
 .sk-tiles i:not(.live){opacity:.38}
+
+/* Before bar: one solid bar. The broken end read as a glitch. */
+.sk-bar.more{width:100%;border-radius:6px}
+.sk-bar.more:after{display:none}
+.sk-time .sk-row{grid-template-columns:52px minmax(0,1fr) 120px}
+.sk-time .sk-row b{text-align:right}
