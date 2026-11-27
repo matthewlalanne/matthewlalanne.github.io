@@ -319,7 +319,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
 <p>I play in several Survivor leagues with family and friends. We draft in person, and for years I tracked it all in Figma.</p>
 <p>The board could show who was still in, but it couldn’t store anything. Picks, scores and results only existed where I had typed them, so there was no way to see trends or get the full picture of a season.</p>
 <p>What the leagues needed was a database. In the app I enter what happened in an episode once, and it’s saved. Standings, scores and who’s still in are all worked out from that data, and the whole season stays there to look back on.</p>
-<p class="trade">One thing carried over. Standings in the app show each player’s picks as faces, and the ones who are out fade back. That’s the Figma board, and it was right the first time.</p></div></div>
+<p class="trade">One thing carried over. Standings in the app show each player’s picks as faces, and the ones who are out fade back. That came straight from the Figma board.</p></div></div>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -365,7 +365,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
 <li><b>Steps that don’t apply go away.</b> On the old page every section was always open, so every section was a question: did this happen? Now I’m asked less.</li>
 <li><b>Review is the last step,</b> because of what a mistake costs. It shows what each person will score before I save.</li></ul>
 <p class="trade">What I got wrong: my first order had one step for all advantages. It was tidy, and it broke my own rule. Finding an idol happens at camp. Playing it happens at Tribal. They became two.</p></div></div>
-  <div class="diff reveal result"><b>What I changed about how I review</b><p>The first audit of the new editor passed. Then I entered a real episode and found five problems it had missed. Looking at a screen and using a screen are different tests. Now nothing counts as reviewed until it’s been used start to finish.</p></div>
+  <div class="diff reveal result"><b>What I changed about how I review</b><p>The first audit of the new editor passed. Then I entered a real episode and found five problems it had missed. Now nothing counts as reviewed until it’s been used start to finish.</p></div>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -386,7 +386,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
 <ul><li>Reading an episode in one league marks it read in your others for that show.</li>
 <li>Notifications are set per league and clear once you’ve seen the thing. Message previews start off, because anyone can read a lock screen.</li>
 <li>The switcher stayed in the header, because people already understood it there. A dot on a league says why it’s there.</li>
-<li>Switching keeps you on the same tab. You changed league. You didn’t change what you were doing.</li></ul>
+<li>Switching keeps you on the same tab, because you changed league and not what you were doing.</li></ul>
 <p class="trade">What’s left: I found this model by fixing bugs, which is backwards. The next step is to design from it. The first thing it doesn’t answer yet: a season ends, but a league has no “over” state, so past leagues have nowhere to go.</p></div></div>
 </div></section>
 
@@ -408,7 +408,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
   <div class="ai">
     <div class="text reveal">
       <p>I designed these screens in the build, not in Figma. I described what I wanted, looked at it on a phone, and sent changes back until it matched what I had in my head.</p>
-      <p>AI is fast at making a screen that looks fine. Looking fine and being right aren’t the same, and telling them apart is the part that’s still mine.</p>
+      <p>AI is fast at making a screen that looks fine, but looking fine and being right aren’t the same, and I’m the one who has to tell them apart.</p>
       <p>What the speed bought me was the method. A problem I saw on Wednesday night was fixed before the next Wednesday, so I could try something, watch one episode and know.</p>
       <p>I also have AI draft each episode’s recap and results. It works from a rules file I wrote. A fact only goes in if two independent recaps agree, or the network or Wikipedia states it. It keeps the links it used, and anything it can’t confirm is left blank and put on a list for me with the reason. The draft loads into the episode editor, and nothing posts until I’ve gone through the Review step myself.</p>
     </div>

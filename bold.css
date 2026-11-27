@@ -740,3 +740,12 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .sk-bar.more:after{display:none}
 .sk-time .sk-row{grid-template-columns:52px minmax(0,1fr) 120px}
 .sk-time .sk-row b{text-align:right}
+
+/* Corporate website screenshot */
+.corp-shot{margin:0 0 28px}
+.corp-shot img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid rgba(20,36,79,.14)}
+.corp-shot figcaption{margin-top:10px;font-size:15px;color:var(--muted)}
+.corp-shot figcaption a{text-decoration:underline;color:inherit}
+.corp-shot.on-dark figcaption{color:#DCE4F7}
+.corp-shot.on-dark img{border-color:rgba(255,255,255,.2)}
+.bio .corp-shot{margin:8px 0 24px;max-width:560px}
