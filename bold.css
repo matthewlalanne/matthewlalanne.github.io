@@ -749,3 +749,10 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .corp-shot.on-dark figcaption{color:#DCE4F7}
 .corp-shot.on-dark img{border-color:rgba(255,255,255,.2)}
 .bio .corp-shot{margin:8px 0 24px;max-width:560px}
+
+/* Links to the locked case studies */
+.cs-link{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:24px}
+.cs-link span,.pw-note{font-size:15px;color:var(--muted)}
+.cs-link span a,.pw-note a{color:inherit;text-decoration:underline}
+.pw-note{margin:14px 0 0}
+.case.c-blue .pw-note,.case.c-navy .pw-note,.case.c-purple .pw-note{color:#fff}
