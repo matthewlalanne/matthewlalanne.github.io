@@ -756,3 +756,8 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .cs-link span a,.pw-note a{color:inherit;text-decoration:underline}
 .pw-note{margin:14px 0 0}
 .case.c-blue .pw-note,.case.c-navy .pw-note,.case.c-purple .pw-note{color:#fff}
+
+/* Home hero: headline on top, intro under it. No empty space above the headline. */
+.hero .phead{display:block}
+.hero .phead h1{max-width:20ch}
+.hero .phead .lede{margin-top:32px;max-width:680px;padding-bottom:0}

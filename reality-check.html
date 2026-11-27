@@ -284,7 +284,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
   <div class="cards tint stagger reveal"><div><b>Which week is this?</b><span>People kept thinking they’d made their weekly pick when they hadn’t. Reminders didn’t fix it, because it wasn’t a memory problem. I rebuilt the app around the episode, and the missed picks stopped.</span></div><div><b>The editor follows the show</b><span>The screen for entering each episode’s results was in the order the scoring needed. I rebuilt it in the order I remember an episode, which is the order it airs.</span></div><div><b>One person, several leagues</b><span>Everything in the app belongs to you, to a league or to a show. Most of my bugs came from putting something at the wrong level.</span></div></div>
   <div class="overview reveal" style="margin-top:72px">
     <div class="measure"><div class="label">How I tested it</div>
-      <p>My testers are my friends and family. That’s a real limit, and I had to be honest with myself about what it meant.</p>
+      <p>My testers are my friends and family, and that limits what I can learn from them.</p>
       <p>They’re playing to win, not to test. They like me. And when something goes wrong they assume they did it. So in a full season nobody told me a screen was confusing.</p>
       <p>If I’d waited for feedback, I’d have learned nothing. So I stopped listening for opinions and watched for three things I could trust.</p></div>
     <div class="measure"><div class="label">What I watched for</div>
@@ -331,7 +331,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
 <p>The family league plays for money, so a missed pick costs something.</p>
 <h3 class="gap">The obvious fix was already there</h3>
 <p>A reminder went out 12 hours before every episode. They got it, and they still missed.</p>
-<p>So this wasn’t a forgetting problem. They had picked. They’d picked for the wrong episode, and the app let them believe they were done.</p>
+<p>They hadn’t forgotten. They had made a pick, but for the wrong episode, and the app let them believe they were done.</p>
 <h3 class="gap">Why it happened</h3>
 <p>The app was organized by feature. A tab called Predictions held this week’s pick, the season pick and old weeks on one page. “I made a pick” felt true no matter which one you’d touched.</p>
 <p>And the app ran on two clocks. Picks lock before the episode airs, so the app had already moved to next week while everyone was still living in this one.</p></div></div>
@@ -372,7 +372,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
   <div class="reveal"><div class="head"><div class="label">Decision 3</div><h2>One person, several leagues</h2></div></div>
   <div class="dec"><div class="reveal l"><div class="panel"><div class="phones n2 stagger reveal"><figure class="fig" id="fig13"><div class="frame"><img src="/img/rc/13-league-switcher.jpg" alt="Home screen with the Switch league menu open over it. It lists five leagues with the current one checked, plus an All leagues, create or join link at the bottom." width="600" height="1304" loading="lazy" decoding="async"><button type="button" class="enlarge ov" data-fig="13" aria-label="Enlarge: The switcher stays in the header, and says why a league has something new."><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
   <figcaption><span>The switcher stays in the header, and says why a league has something new.</span></figcaption></figure><figure class="fig" id="fig27"><div class="frame"><img src="/img/rc/27-notifications-per-league.jpg" alt="Notifications screen for one league with six toggles: Episode results, Pick reminders, Draft, Chat messages, Show the message, and Reactions. All six are on in this shot." width="600" height="1304" loading="lazy" decoding="async"><button type="button" class="enlarge ov" data-fig="27" aria-label="Enlarge: Notifications are set per league. Message previews start off, and I've turned mine on here."><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
-  <figcaption><span>Notifications are set per league. Message previews start off, and I’ve turned mine on here.</span></figcaption></figure></div></div></div><div class="text reveal"><h3>Three bugs that were one problem</h3>
+  <figcaption><span>Notifications are set per league. Message previews start off, and I’ve turned mine on here.</span></figcaption></figure></div></div></div><div class="text reveal"><h3>Three bugs with the same cause</h3>
 <ul><li>A notification arrives. Which league is it from, and where does tapping it go?</li>
 <li>I read this week’s recap in one league. Why is it still “new” in my other league for the same show?</li>
 <li>I want every chat message from one league and none from another.</li></ul>
@@ -408,7 +408,7 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
   <div class="ai">
     <div class="text reveal">
       <p>I designed these screens in the build, not in Figma. I described what I wanted, looked at it on a phone, and sent changes back until it matched what I had in my head.</p>
-      <p>AI is fast at making a screen that looks fine, but looking fine and being right aren’t the same, and I’m the one who has to tell them apart.</p>
+      <p>AI is fast at making a screen that looks fine, but it can’t tell me whether the screen is right. I have to check that myself.</p>
       <p>What the speed bought me was the method. A problem I saw on Wednesday night was fixed before the next Wednesday, so I could try something, watch one episode and know.</p>
       <p>I also have AI draft each episode’s recap and results. It works from a rules file I wrote. A fact only goes in if two independent recaps agree, or the network or Wikipedia states it. It keeps the links it used, and anything it can’t confirm is left blank and put on a list for me with the reason. The draft loads into the episode editor, and nothing posts until I’ve gone through the Review step myself.</p>
     </div>
@@ -430,8 +430,8 @@ html.js .rc .cs .stack.in img:nth-child(3){transform:rotate(6deg);transition-del
 
 <dialog class="lb" id="lb" aria-labelledby="lbcap"><div class="box"><div class="bar"><p id="lbcap"></p><button type="button" class="close" aria-label="Close">&times;</button></div><div class="body"><img id="lbimg" src="" alt=""></div></div></dialog>
 <section class="contact" id="contact"><div class="wrap"><div class="row">
-  <div><div class="eyebrow">Say hi</div><h2>Thanks for reading this far.</h2></div>
-  <div><p>I’m looking for a senior product designer role. Email me, and I’ll send the password for the full case studies with my reply.</p>
+  <div><div class="eyebrow">Say hi</div><h2>I’m looking for a senior product designer role.</h2></div>
+  <div><p>Email me, and I’ll send the password for the full case studies with my reply.</p>
   <div class="btns" style="margin-top:0"><a class="pill" href="mailto:lalanne.matthew@gmail.com">Email me</a><a class="pill line" href="https://www.linkedin.com/in/matthewlalanne">LinkedIn</a><a class="pill line" href="/work">More case studies</a></div></div>
 </div></div></section>
 </main>
