@@ -725,3 +725,12 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .duo-art.shot{align-items:flex-start}
 .duo-art.shot img{flex:none;height:auto;align-self:flex-start}
 @media (max-width:820px){.duo{padding-top:56px}}
+
+/* Hiring review fixes */
+.sk-time .sk-row{grid-template-columns:52px minmax(0,1fr) max-content}
+@media (min-width:1001px){.abx-rail{position:sticky;top:40px}}
+@media (max-width:1000px){.abx-grid .bio{order:-1}}
+.caseindex .sw{align-self:start;margin-top:4px}
+
+/* Corporate website card: 6 of the 16 built pages are live. */
+.sk-tiles i:not(.live){opacity:.38}
